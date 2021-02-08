@@ -56,3 +56,43 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  overflow: hidden;
+}
+
+.close {
+  width: 50%;
+  height: 50%;
+  position: relative;
+  transition: 0.2s;
+}
+.close:before, .close:after {
+  display: block;
+  content: "";
+  width: 80%;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.close:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.close:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.is-ball-hover .close {
+  width: 70%;
+  height: 70%;
+  transform: rotate(90deg);
+}

@@ -1,5 +1,3 @@
-
-
 interface RippleSetting {
     speed?: number;
     maxSize?: number;

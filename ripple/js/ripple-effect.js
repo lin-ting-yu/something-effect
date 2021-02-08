@@ -117,6 +117,9 @@
             parentMap.delete(parent);
         }
     };
+    ripple.getRipple = (parent) => {
+        return parentMap.has(parent) || null;
+    };
     ripple.setting = (newSetting) => {
         Object.keys(newSetting).forEach(key => {
             rippleSetting[key] = newSetting[key];
