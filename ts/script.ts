@@ -17,7 +17,7 @@ const EFFECT_PAGE_LIST: EffectPageData[] = [
 let selectedIndex = 0;
 
 const IFRAME = document.getElementById('iframe');
-const LOCATION_HREF = location.href.match(/(.+)\/index/)[1];
+const LOCATION_HREF = location.href.replace(/index.+/, '');
 let isResize: boolean = false;
 
 window.addEventListener('resize', () => {
