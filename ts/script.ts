@@ -17,7 +17,7 @@ const EFFECT_PAGE_LIST: EffectPageData[] = [
 let selectedIndex = 0;
 
 const IFRAME = document.getElementById('iframe');
-
+const LOCATION_HREF = location.href.match(/(.+)\/index/)[1];
 let isResize: boolean = false;
 
 window.addEventListener('resize', () => {
@@ -65,12 +65,12 @@ function bindMenuEvent(): void {
         item.textContent = pageData.name.toLocaleUpperCase();
         if (i === selectedIndex) {
             item.classList.add('active');
-            IFRAME.setAttribute('src', pageData.path);
+            IFRAME.setAttribute('src', LOCATION_HREF + pageData.path);
         }
         item.addEventListener('click', () => {
             if (i !== selectedIndex) {
                 selectedIndex = i;
-                IFRAME.setAttribute('src', pageData.path);
+                IFRAME.setAttribute('src', LOCATION_HREF + pageData.path);
                 const itemList = menuList.querySelectorAll('.menu-item');
                 for(let i = 0; i < itemList.length; i++) {
                     const dom = itemList[i];
