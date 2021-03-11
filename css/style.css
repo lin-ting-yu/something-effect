@@ -1,0 +1,214 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, menu, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: April, 微軟正黑體;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+}
+
+menu, ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+.menu {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  transition: background-color 0.3s;
+}
+.menu * {
+  pointer-events: auto;
+}
+.menu.active {
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.menu.active .menu-btn {
+  transform: rotate(180deg);
+}
+.menu.active .menu-btn .line {
+  background-color: #fff;
+}
+.menu.active .menu-btn .line:nth-child(1) {
+  width: 110%;
+  top: 50%;
+  margin-top: -2px;
+  transform: rotate(45deg);
+}
+.menu.active .menu-btn .line:nth-child(2) {
+  width: 110%;
+  top: 50%;
+  margin-top: -2px;
+  transform: rotate(45deg);
+}
+.menu.active .menu-btn .line:nth-child(3) {
+  width: 110%;
+  bottom: 50%;
+  margin-bottom: -2px;
+  transform: rotate(-45deg);
+}
+.menu.active .menu-list {
+  transform: translateX(0%);
+}
+.menu:not(.active) .menu-btn:hover .line {
+  transition: 0.3s;
+}
+.menu:not(.active) .menu-btn:hover .line:nth-child(2) {
+  left: 40%;
+}
+.menu:not(.active) .menu-btn:hover .line:nth-child(3) {
+  left: 20%;
+}
+.menu .menu-btn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 20;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.menu .menu-btn .line {
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+  position: absolute;
+  transform-origin: center center;
+  transition: 0.5s;
+  left: 0;
+}
+.menu .menu-btn .line:nth-child(1) {
+  top: 15%;
+}
+.menu .menu-btn .line:nth-child(2) {
+  width: 60%;
+  top: 50%;
+  margin-top: -2px;
+}
+.menu .menu-btn .line:nth-child(3) {
+  width: 80%;
+  bottom: 15%;
+}
+.menu .menu-list {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 70px;
+  transform: translateX(-100%);
+  transition: 0.3s;
+}
+.menu .menu-list .menu-item {
+  font-size: 40px;
+  letter-spacing: 1px;
+  padding: 30px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  transition: 0.5s;
+  color: #fff;
+}
+.menu .menu-list .menu-item.active::after {
+  content: "⇦";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(110%, -50%);
+}
+.menu .menu-list .menu-item::before {
+  content: "";
+  display: block;
+  width: calc(100% - 40px);
+  height: 4px;
+  background-color: #fff;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+.menu .menu-list .menu-item:hover {
+  letter-spacing: 5px;
+}
+.menu .menu-list .menu-item:hover::before {
+  background-color: transparent;
+  height: 10px;
+  background-size: auto 8px;
+  background-repeat: repeat-x;
+  background-image: url("./../image/wave.svg");
+  bottom: 15px;
+  animation: wave infinite 6s linear;
+}
+
+@keyframes wave {
+  0% {
+    background-position: 0 50%;
+  }
+  100% {
+    background-position: -100% 50%;
+  }
+}

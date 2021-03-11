@@ -123,6 +123,7 @@ interface RippleData {
                 size,
                 event: {
                     resize: () => {
+                        console.log('asas')
                         const eventRect = parent.getBoundingClientRect();
                         const size = {
                             width: eventRect.width,

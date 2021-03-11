@@ -13,5 +13,18 @@
         maxSize: 500
     });
     ripple.appendTo(document.querySelector('body'));
+
+    let isResize = false;
+    window.addEventListener('resize', () => {
+        if (!isResize) {
+            isResize = true;
+            if (ripple) {
+                ripple.resize();
+            }
+            setTimeout(() => {
+                isResize = false;
+            }, 100);
+        }
+    });
 </script>
 </html>
