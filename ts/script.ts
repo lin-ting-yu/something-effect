@@ -1,17 +1,25 @@
+enum Device {
+    Mobile = 'mobile',
+    Desktop = 'desktop',
+    Both = 'both'
+}
 interface EffectPageData {
     name: string;
     path: string;
+    device: Device;
 }
 
 
 const EFFECT_PAGE_LIST: EffectPageData[] = [
     {
         name: 'magnetic-ball',
-        path: '/effects/magnetic-ball/index.html'
+        path: '/effects/magnetic-ball/index.html',
+        device: Device.Desktop
     },
     {
         name: 'ripple',
-        path: '/effects/ripple/index.html'
+        path: '/effects/ripple/index.html',
+        device: Device.Both
     },
 ];
 let selectedIndex = 0;

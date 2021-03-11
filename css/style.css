@@ -172,6 +172,10 @@ body {
   position: relative;
   transition: 0.5s;
   color: #fff;
+  opacity: 0.5;
+}
+.menu .menu-list .menu-item.active {
+  opacity: 1;
 }
 .menu .menu-list .menu-item.active::after {
   content: "⇦";
@@ -193,6 +197,7 @@ body {
 }
 .menu .menu-list .menu-item:hover {
   letter-spacing: 5px;
+  opacity: 1;
 }
 .menu .menu-list .menu-item:hover::before {
   background-color: transparent;

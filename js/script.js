@@ -1,11 +1,19 @@
+var Device;
+(function (Device) {
+    Device["Mobile"] = "mobile";
+    Device["Desktop"] = "desktop";
+    Device["Both"] = "both";
+})(Device || (Device = {}));
 const EFFECT_PAGE_LIST = [
     {
         name: 'magnetic-ball',
-        path: '/effects/magnetic-ball/index.html'
+        path: '/effects/magnetic-ball/index.html',
+        device: Device.Desktop
     },
     {
         name: 'ripple',
-        path: '/effects/ripple/index.html'
+        path: '/effects/ripple/index.html',
+        device: Device.Both
     },
 ];
 let selectedIndex = 0;

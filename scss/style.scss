@@ -122,13 +122,17 @@ body {
       position: relative;
       transition: 0.5s;
       color: #fff;
-      &.active::after {
-        content: "⇦";
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translate(110%, -50%);
+      opacity: 0.5;
+      &.active{
+        opacity: 1;
+        &::after {
+          content: "⇦";
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translate(110%, -50%);
+        }
       }
       &::before {
         content: "";
@@ -142,6 +146,7 @@ body {
       }
       &:hover {
         letter-spacing: 5px;
+        opacity: 1;
         &::before {
           background-color: transparent;
           height: 10px;
