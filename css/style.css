@@ -182,31 +182,48 @@ body {
   display: block;
   position: absolute;
   right: 0;
-  top: 50%;
+  top: calc(0.5em + 30px);
   transform: translate(110%, -50%);
-}
-.menu .menu-list .menu-item::before {
-  content: "";
-  display: block;
-  width: calc(100% - 40px);
-  height: 4px;
-  background-color: #fff;
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
 }
 .menu .menu-list .menu-item:hover {
   letter-spacing: 5px;
   opacity: 1;
 }
-.menu .menu-list .menu-item:hover::before {
+.menu .menu-list .menu-item:hover .name::before {
   background-color: transparent;
   height: 10px;
   background-size: auto 8px;
   background-repeat: repeat-x;
   background-image: url("./../image/wave.svg");
-  bottom: 15px;
-  animation: wave infinite 6s linear;
+  bottom: -10px;
+  animation: wave infinite 3s linear;
+}
+.menu .menu-list .menu-item .name {
+  position: relative;
+}
+.menu .menu-list .menu-item .name::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+}
+.menu .menu-list .menu-item .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.menu .menu-list .menu-item .tag-list .tag {
+  font-size: 14px;
+  letter-spacing: 1px;
+  background-color: #333;
+  color: #eee;
+  padding: 4px 10px;
+  border-radius: 10px;
+  margin-right: 10px;
 }
 
 @keyframes wave {
@@ -214,6 +231,6 @@ body {
     background-position: 0 50%;
   }
   100% {
-    background-position: -100% 50%;
+    background-position: 233px 50%;
   }
 }
